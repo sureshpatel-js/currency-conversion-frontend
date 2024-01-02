@@ -24,3 +24,39 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+li:hover {
+  color: white !important;
+  background-color: #1A1A1F !important;
+}
+
+.MuiOption-highlighted {
+  color: white !important;
+  background-color: #1A1A1F !important;
+}
+
+.MuiSelect-listbox {
+  padding-block: 0px !important;
+  background-color: #1A1A1F !important;
+
+}
+
+
+.MuiSelect-listbox::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.MuiSelect-listbox {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+
+@media(max-width:460px) {
+  .currencyConverter {
+    width: 360px;
+  }
+}

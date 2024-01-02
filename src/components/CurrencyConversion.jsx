@@ -29,17 +29,47 @@ const CurrencyConversion = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const fiat = await axios.get(`${BASE_URL}/v1/fiat`);
-                const cryptocurrency = await axios.get(`${BASE_URL}/v1/cryptocurrency`);
+                let fiat = await axios.get(`${BASE_URL}/v1/fiat`);
+                let cryptocurrency = await axios.get(`${BASE_URL}/v1/cryptocurrency`);
+                fiat = fiat?.data?.data?.data;
+                cryptocurrency = cryptocurrency?.data?.data?.data;
+                fiat = fiat.sort((a, b) => {
+                    const symbolA = a.symbol.toUpperCase();
+                    const symbolB = b.symbol.toUpperCase();
+                    if (symbolA < symbolB) {
+                        return -1;
+                    }
+                    if (symbolA > symbolB) {
+                        return 1;
+                    }
+                    return 0;
+                });
+                cryptocurrency = cryptocurrency.sort((a, b) => {
+                    const symbolA = a.symbol.toUpperCase();
+                    const symbolB = b.symbol.toUpperCase();
+                    if (symbolA < symbolB) {
+                        return -1;
+                    }
+                    if (symbolA > symbolB) {
+                        return 1;
+                    }
+                    return 0;
+                });
                 setState({
-                    fiat: fiat?.data?.data?.data,
-                    cryptocurrency: cryptocurrency?.data?.data?.data
+                    fiat,
+                    cryptocurrency
                 });
             } catch (error) {
-                toast.error(error.message);
+                if (error?.response?.data?.status === "error") {
+                    toast.error(error?.response?.data?.data?.message);
+                } else {
+                    toast.error(error.message);
+                }
             }
         }
         fetchData();
+        var inputElement = document.getElementById("amoutInbutBox");
+        inputElement.disabled = true;
     }, []);
 
 
@@ -49,7 +79,12 @@ const CurrencyConversion = () => {
             const resObj = await axios.get(`${BASE_URL}/v1/conversion?source=${crypto}&amount=${amount}&target=${currency}`);
             setTotal(resObj?.data?.data?.data?.total);
         } catch (error) {
-            toast.error(error.message);
+            setTotal("");
+            if (error?.response?.data?.status === "error") {
+                toast.error(error?.response?.data?.data?.message);
+            } else {
+                toast.error(error.message);
+            }
         } finally {
             setLoding(false);
         }
@@ -99,10 +134,10 @@ const CurrencyConversion = () => {
                                         }}
                                         sx={{ mr: -1.5, '&:hover': { bgcolor: 'transparent', color: "white" }, color: "#337666", backgroundColor: "#1A1A1F" }}
                                     >
-                                        <Option key={"Crypto"} style={{ color: "#337666", backgroundColor: "#1A1A1F" }} value={"Crypto"}>Select Crypto</Option>
+                                        <Option sx={{ '&:hover': { bgcolor: 'transparent', color: "white" }, color: "#337666", backgroundColor: "#1A1A1F" }} key={"Crypto"} value={"Crypto"}>Select Crypto</Option>
                                         {
                                             state?.cryptocurrency?.map((el, idx) => {
-                                                return <Option key={idx} style={{ color: "#337666", backgroundColor: "#1A1A1F" }} value={el.symbol}>{el.symbol}</Option>
+                                                return <Option sx={{ '&:hover': { bgcolor: 'transparent', color: "white" }, color: "#337666", backgroundColor: "#1A1A1F" }} key={idx} value={el.symbol}>{el.symbol}</Option>
                                             })
                                         }
 
@@ -121,6 +156,7 @@ const CurrencyConversion = () => {
                     <Stack spacing={1.5}>
                         <Input
                             placeholder="Amount"
+                            id='amoutInbutBox'
                             value={total?.toLocaleString("en-US")}
                             startDecorator={currency?.split("-")[1]}
                             endDecorator={
@@ -128,7 +164,6 @@ const CurrencyConversion = () => {
                                     <Select
                                         variant="plain"
                                         value={currency}
-
                                         onChange={(_, value) => setCurrency(value)}
                                         slotProps={{
                                             listbox: {
@@ -139,7 +174,7 @@ const CurrencyConversion = () => {
                                     >
                                         {
                                             state?.fiat?.map((el, idx) => {
-                                                return <Option key={idx} style={{ color: "#337666", backgroundColor: "#1A1A1F" }} value={`${el.symbol}-${el.sign}`}>{el.symbol}</Option>
+                                                return <Option key={idx} sx={{ '&:hover': { bgcolor: 'transparent', color: "white" }, color: "#337666", backgroundColor: "#1A1A1F" }} value={`${el.symbol}-${el.sign}`}>{el.symbol}</Option>
                                             })
                                         }
                                     </Select>
