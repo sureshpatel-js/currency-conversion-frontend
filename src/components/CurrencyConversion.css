@@ -1,5 +1,5 @@
 .currencyConverter {
-  width: 380px;
+ 
   height: 284px;
   border-radius: 12px;
   background-color: #1A1A1F;
@@ -50,11 +50,4 @@ li:hover {
   /* IE and Edge */
   scrollbar-width: none;
   /* Firefox */
-}
-
-
-@media(max-width:767) {
-  .currencyConverter {
-    width: 340px;
-  }
 }
