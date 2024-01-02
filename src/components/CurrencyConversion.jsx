@@ -109,7 +109,7 @@ const CurrencyConversion = () => {
     return (
         <div className='currencyConverter' >
             <div style={{ height: "100%", padding: 20, display: "flex", flexDirection: "column" }}  >
-                <div style={{ width: 317, height: 32, display: "flex", flexDirection: "row", alignItems: "center" }} >
+                <div style={{ width: 300, height: 32, display: "flex", flexDirection: "row", alignItems: "center" }} >
                     <div style={{ fontFamily: "sans-serif", fontSize: 24 }} >  Currency Converter</div>
                     <i style={{ marginLeft: 20, color: "#44B496", opacity: "60%", fontSize: 20 }} className="bi bi-currency-exchange"></i>
                 </div>
@@ -144,7 +144,7 @@ const CurrencyConversion = () => {
                                     </Select>
                                 </React.Fragment>
                             }
-                            sx={{ width: 320, color: "#F8F8FF", backgroundColor: "#1A1A1F" }}
+                            sx={{ width: 300, color: "#F8F8FF", backgroundColor: "#1A1A1F" }}
                         />
 
                     </Stack>
@@ -180,7 +180,7 @@ const CurrencyConversion = () => {
                                     </Select>
                                 </React.Fragment>
                             }
-                            sx={{ width: 320, color: "#F8F8FF", backgroundColor: "#1A1A1F" }}
+                            sx={{ width: 300, color: "#F8F8FF", backgroundColor: "#1A1A1F" }}
                         />
                     </Stack>
                 </div>
