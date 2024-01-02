@@ -1,10 +1,13 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { Toaster } from 'react-hot-toast';
+import CurrencyConversion from './components/CurrencyConversion';
+import Header from './components/Header';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="app">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,7 +20,10 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
+      <Header />
+      <CurrencyConversion />
+      <Toaster />
     </div>
   );
 }

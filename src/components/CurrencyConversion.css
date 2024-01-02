@@ -1,0 +1,26 @@
+.currencyConverter {
+  width: 400px;
+  height: 284px;
+  border-radius: 12px;
+  background-color: #1A1A1F;
+  color: #F8F8FF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* Remove up and down arrows in number input */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Remove arrow buttons in Chrome and Safari */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
