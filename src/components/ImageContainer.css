@@ -1,0 +1,31 @@
+.montserratFont {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.montserratFontBig {
+    font-size: 64px;
+}
+
+.logoImage {
+    height: 280px;
+}
+
+@media(max-width:767) {
+    .montserratFontBig {
+        font-size: 34px;
+    }
+
+    .montserratFontSmall {
+        font-size: 16px;
+    }
+
+    .logoImage {
+        width: 180px;
+    }
+}
+
+.montserratFontGradient {
+    background: linear-gradient(to right, #6D18EF, #186EF2);
+    -webkit-background-clip: text;
+    color: transparent;
+}

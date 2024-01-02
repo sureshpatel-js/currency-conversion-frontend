@@ -10,8 +10,6 @@
   justify-content: center;
 }
 
-
-
 /* Remove up and down arrows in number input */
 input[type="number"] {
   -moz-appearance: textfield;
@@ -55,7 +53,7 @@ li:hover {
 }
 
 
-@media(max-width:460px) {
+@media(max-width:767) {
   .currencyConverter {
     width: 340px;
   }

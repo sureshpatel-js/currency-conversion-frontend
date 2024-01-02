@@ -1,8 +1,9 @@
 
-import './App.css';
 import { Toaster } from 'react-hot-toast';
+import './App.css';
 import CurrencyConversion from './components/CurrencyConversion';
 import Header from './components/Header';
+import ImageContainer from './components/ImageContainer';
 
 function App() {
   return (
@@ -22,7 +23,12 @@ function App() {
         </a>
       </header> */}
       <Header />
-      <CurrencyConversion />
+      <div className='heroContainer' style={{
+
+      }} >
+        <ImageContainer />
+        <CurrencyConversion />
+      </div>
       <Toaster />
     </div>
   );

@@ -76,10 +76,10 @@ const CurrencyConversion = () => {
     const debouncedSearch = debounce(async (crypto, amount, currency) => {
         try {
             setLoding(true);
+            setTotal("");
             const resObj = await axios.get(`${BASE_URL}/v1/conversion?source=${crypto}&amount=${amount}&target=${currency}`);
             setTotal(resObj?.data?.data?.data?.total);
         } catch (error) {
-            setTotal("");
             if (error?.response?.data?.status === "error") {
                 toast.error(error?.response?.data?.data?.message);
             } else {
