@@ -20,19 +20,24 @@
   overflow-y: auto;
   padding-top: 24px;
 }
+
 /* CurrencyConversion Component */
 .currencyConverter {
   width: 380px;
 }
+
 /* ImageContainer Component*/
 .sansSerifFontBig {
-  font-size: 64px;
+  font-size: 54px;
 }
 
 .sansSerifFontSmall {
   font-size: 24px;
 }
 
+.logoImage {
+  width: 240px;
+}
 
 /* ------------------------------------------ */
 @media(max-width:767px) {
