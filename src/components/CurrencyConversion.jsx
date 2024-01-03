@@ -104,7 +104,15 @@ const CurrencyConversion = () => {
     }, [crypto, amount, currency]);
 
     const inputHandler = (e) => {
-        setAmount(e.target.value);
+        const inputValue = e.target.value;
+        // Use a regular expression to allow positive decimal numbers
+        const numericInput = inputValue.replace(/[^0-9.]/g, '');
+        // Count the occurrences of the dot in the numeric input
+        const dotCount = (numericInput.match(/\./g) || []).length;
+        // Allow the dot only if it hasn't been used before
+        if (dotCount <= 1) {     
+        setAmount(numericInput);
+        }
     }
 
     return (
@@ -119,7 +127,7 @@ const CurrencyConversion = () => {
                         <Input
                             placeholder="Amount"
                             value={amount}
-                            type='number'
+                            type='text'
                             startDecorator={crypto == "Crypto" ? "" : crypto}
                             onChange={inputHandler}
                             endDecorator={

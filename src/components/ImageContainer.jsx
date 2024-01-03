@@ -3,7 +3,7 @@ import "./ImageContainer.css";
 import "./../App.css";
 const ImageContainer = () => {
     return (
-        <div>
+        <div >
             <div style={{ padding: 20 }} >
                 <div className='montserratFont montserratFontBig' style={{ color: "#F8F8FF", fontWeight: 300 }} >
                     Convert Currency

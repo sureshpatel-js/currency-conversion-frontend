@@ -10,19 +10,6 @@
   justify-content: center;
 }
 
-/* Remove up and down arrows in number input */
-input[type="number"] {
-  -moz-appearance: textfield;
-  appearance: textfield;
-}
-
-/* Remove arrow buttons in Chrome and Safari */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
 li:hover {
   color: white !important;
   background-color: #1A1A1F !important;
