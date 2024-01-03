@@ -1,8 +1,8 @@
-.montserratFont {
-    font-family: 'Montserrat', sans-serif;
+.sansSerifFont {
+    font-family:  sans-serif;
 }
 
-.montserratFontGradient {
+.sansSerifFontGradient {
     background: linear-gradient(to right, #6D18EF, #186EF2);
     -webkit-background-clip: text;
     color: transparent;

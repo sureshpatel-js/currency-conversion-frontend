@@ -25,11 +25,11 @@
   width: 380px;
 }
 /* ImageContainer Component*/
-.montserratFontBig {
+.sansSerifFontBig {
   font-size: 64px;
 }
 
-.montserratFontSmall {
+.sansSerifFontSmall {
   font-size: 24px;
 }
 
@@ -43,11 +43,11 @@
     height: 100%;
   }
 
-  .montserratFontBig {
+  .sansSerifFontBig {
     font-size: 34px;
   }
 
-  .montserratFontSmall {
+  .sansSerifFontSmall {
     font-size: 16px;
   }
 

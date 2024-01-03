@@ -5,13 +5,13 @@ const ImageContainer = () => {
     return (
         <div >
             <div style={{ padding: 20 }} >
-                <div className='montserratFont montserratFontBig' style={{ color: "#F8F8FF", fontWeight: 300 }} >
+                <div className='sansSerifFont sansSerifFontBig' style={{ color: "#F8F8FF", fontWeight: 300 }} >
                     Convert Currency
                 </div>
-                <div className='montserratFont montserratFontGradient montserratFontBig' style={{ fontWeight: 300 }}  >
+                <div className='sansSerifFont sansSerifFontGradient sansSerifFontBig' style={{ fontWeight: 300 }}  >
                     Real-time
                 </div>
-                <div className='montserratFont montserratFontSmall' style={{ marginTop: 24, color: "#F8F8FF", fontWeight: 300 }}  >
+                <div className='sansSerifFont sansSerifFontSmall' style={{ marginTop: 24, color: "#F8F8FF", fontWeight: 300 }}  >
                     With DZap's advanced currency converter
                 </div>
             </div>
