@@ -1,6 +1,6 @@
 .app {
-  height: 100vh;
-  width: 100vw;
+  height: auto;
+  width: 100%;
   background-color: #2A2A2F;
   display: flex;
   flex-direction: column;
